@@ -21,6 +21,9 @@ public class Unit : MonoBehaviour, IAttacker
     public bool Attacking
     { get { return CurrentWeapon != null && CurrentWeapon.Attacking; } }
 
+    public bool HasTarget
+    { get { return CurrentWeapon != null && CurrentWeapon.HasTarget; } }
+
     public Transform Target
     { get { return CurrentWeapon != null ? CurrentWeapon.Target : null; } }
 

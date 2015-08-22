@@ -29,7 +29,9 @@ public class Weapon : MonoBehaviour, IAttacker
 
 	public Transform Target { get; private set; }
 
-	public bool Attacking { get { return Target != null; } }
+	public bool Attacking { get; private set; }
+
+    public bool HasTarget { get { return Target != null; } }
 
     private float _maxSqrDetectionDistance;
     private float _maxSqrDistance;
@@ -111,6 +113,8 @@ public class Weapon : MonoBehaviour, IAttacker
 
     public void Attack()
     {
+        Attacking = false;
+
         // Check if target is inactive.
         if (Target == null)
             { SetTarget(null); return; }
@@ -152,6 +156,7 @@ public class Weapon : MonoBehaviour, IAttacker
         var attack = ObjectPool.Instance.GetObjectWithComponent(AttackPrefab);
         attack.Weapon = this;
         attack.Target(Target);
+        Attacking = true;
     }
 
     protected virtual bool IsValidTarget(Transform target)
@@ -171,6 +176,8 @@ public class Weapon : MonoBehaviour, IAttacker
 
         if (Target != null && UseBoundsForRange)
             _targetCollider = Target.GetComponent<Collider>();
+
+        Attacking = false;
 	}
 
     private void SpawnVocalEffect()

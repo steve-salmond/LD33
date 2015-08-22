@@ -7,6 +7,7 @@ public abstract class Attract : MonoBehaviour
 {
 	public AnimationCurve Attraction;
 	public float Strength = 1;
+    public float Range = 1;
 
     public int Interval = 5;
     private const float MinDistance = 0.5f;
@@ -86,5 +87,5 @@ public abstract class Attract : MonoBehaviour
     }
 
     protected virtual float AttractionStrength(int i, Transform t, float distance)
-    { return Attraction.Evaluate(distance)*Strength; }
+    { return Attraction.Evaluate(distance / Range) * Strength; }
 }
