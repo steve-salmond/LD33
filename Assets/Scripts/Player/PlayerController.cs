@@ -202,12 +202,14 @@ public class PlayerController : Singleton<PlayerController>
     IEnumerator AttackRoutine()
     {
         var weapon = _unit.CurrentWeapon;
-        weapon.SetTarget(Mouse);
-        weapon.Attack();
         _animator.SetBool("IsAttacking", true);
 
         while (Input.GetButton("Fire1") && !Transforming)
-            yield return new WaitForSeconds(0.5f);
+        {
+            weapon.SetTarget(Mouse);
+            weapon.Attack();
+            yield return new WaitForSeconds(weapon.AttackPeriod.x);
+        }
 
         _animator.SetBool("IsAttacking", false);
         weapon.SetTarget(null);
