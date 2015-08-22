@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: 8dc0fd509559496469ef8395bab5d505
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Armature
+    100002: DEF_ArmLower.L
+    100004: DEF_ArmLower.L_end
+    100006: DEF_ArmLower.R
+    100008: DEF_ArmLower.R_end
+    100010: DEF_ArmUpper.L
+    100012: DEF_ArmUpper.R
+    100014: DEf_Chest
+    100016: DEF_Foot.L
+    100018: DEF_Foot.R
+    100020: DEF_Hand.L
+    100022: DEF_Hand.R
+    100024: DEF_Head
+    100026: DEF_Head_end
+    100028: DEF_Hip
+    100030: DEF_Index01.L
+    100032: DEF_Index01.R
+    100034: DEF_Index02.L
+    100036: DEF_Index02.R
+    100038: DEF_Index03.L
+    100040: DEF_Index03.L_end
+    100042: DEF_Index03.R
+    100044: DEF_Index03.R_end
+    100046: DEF_Leg.L
+    100048: DEF_Leg.L_end
+    100050: DEF_Leg.R
+    100052: DEF_Leg.R_end
+    100054: DEF_Middle01.L
+    100056: DEF_Middle01.R
+    100058: DEF_Middle02.L
+    100060: DEF_Middle02.R
+    100062: DEF_Middle03.L
+    100064: DEF_Middle03.L_end
+    100066: DEF_Middle03.R
+    100068: DEF_Middle03.R_end
+    100070: DEF_Neck
+    100072: DEF_Pinky01.L
+    100074: DEF_Pinky01.R
+    100076: DEF_Pinky02.L
+    100078: DEF_Pinky02.R
+    100080: DEF_Pinky03.L
+    100082: DEF_Pinky03.L_end
+    100084: DEF_Pinky03.R
+    100086: DEF_Pinky03.R_end
+    100088: Def_Spine
+    100090: DEF_Thumb01.L
+    100092: DEF_Thumb01.R
+    100094: DEF_Thumb02.L
+    100096: DEF_Thumb02.L_end
+    100098: DEF_Thumb02.R
+    100100: DEF_Thumb02.R_end
+    100102: DEF_Tigh.L
+    100104: DEF_Tigh.R
+    100106: DEF_Toe.L
+    100108: DEF_Toe.L_end
+    100110: DEF_Toe.R
+    100112: DEF_Toe.R_end
+    100114: DEF_Weapon
+    100116: DEF_Weapon_end
+    100118: Good_Mage
+    100120: //RootNode
+    100122: IK_Elbow.L
+    100124: IK_Elbow.L_end
+    100126: IK_Elbow.R
+    100128: IK_Elbow.R_end
+    100130: IK_Knee.L
+    100132: IK_Knee.L_end
+    100134: IK_Knee.R
+    100136: IK_Knee.R_end
+    100138: Root
+    100140: Root_end
+    100142: Scepter
+    400000: Armature
+    400002: DEF_ArmLower.L
+    400004: DEF_ArmLower.L_end
+    400006: DEF_ArmLower.R
+    400008: DEF_ArmLower.R_end
+    400010: DEF_ArmUpper.L
+    400012: DEF_ArmUpper.R
+    400014: DEf_Chest
+    400016: DEF_Foot.L
+    400018: DEF_Foot.R
+    400020: DEF_Hand.L
+    400022: DEF_Hand.R
+    400024: DEF_Head
+    400026: DEF_Head_end
+    400028: DEF_Hip
+    400030: DEF_Index01.L
+    400032: DEF_Index01.R
+    400034: DEF_Index02.L
+    400036: DEF_Index02.R
+    400038: DEF_Index03.L
+    400040: DEF_Index03.L_end
+    400042: DEF_Index03.R
+    400044: DEF_Index03.R_end
+    400046: DEF_Leg.L
+    400048: DEF_Leg.L_end
+    400050: DEF_Leg.R
+    400052: DEF_Leg.R_end
+    400054: DEF_Middle01.L
+    400056: DEF_Middle01.R
+    400058: DEF_Middle02.L
+    400060: DEF_Middle02.R
+    400062: DEF_Middle03.L
+    400064: DEF_Middle03.L_end
+    400066: DEF_Middle03.R
+    400068: DEF_Middle03.R_end
+    400070: DEF_Neck
+    400072: DEF_Pinky01.L
+    400074: DEF_Pinky01.R
+    400076: DEF_Pinky02.L
+    400078: DEF_Pinky02.R
+    400080: DEF_Pinky03.L
+    400082: DEF_Pinky03.L_end
+    400084: DEF_Pinky03.R
+    400086: DEF_Pinky03.R_end
+    400088: Def_Spine
+    400090: DEF_Thumb01.L
+    400092: DEF_Thumb01.R
+    400094: DEF_Thumb02.L
+    400096: DEF_Thumb02.L_end
+    400098: DEF_Thumb02.R
+    400100: DEF_Thumb02.R_end
+    400102: DEF_Tigh.L
+    400104: DEF_Tigh.R
+    400106: DEF_Toe.L
+    400108: DEF_Toe.L_end
+    400110: DEF_Toe.R
+    400112: DEF_Toe.R_end
+    400114: DEF_Weapon
+    400116: DEF_Weapon_end
+    400118: Good_Mage
+    400120: //RootNode
+    400122: IK_Elbow.L
+    400124: IK_Elbow.L_end
+    400126: IK_Elbow.R
+    400128: IK_Elbow.R_end
+    400130: IK_Knee.L
+    400132: IK_Knee.L_end
+    400134: IK_Knee.R
+    400136: IK_Knee.R_end
+    400138: Root
+    400140: Root_end
+    400142: Scepter
+    4300000: Scepter
+    4300002: Good_Mage
+    7400000: Armature|Evil_Attack01
+    7400002: Armature|Evil_Idle
+    7400004: Armature|Evil_Mage_Run
+    7400006: Armature|Evil_MageAttack
+    7400008: Armature|Evil_Run
+    7400010: Armature|Evil_Transform
+    7400012: Armature|Good_Attack01
+    7400014: Armature|Good_Idle
+    7400016: Armature|Good_Run
+    7400018: Armature|Good_Transform
+    7400020: Armature|GoodMage_Attack
+    7400022: Armature|GoodMage_Run
+    9500000: //RootNode
+    13700000: Good_Mage
+    13700002: Scepter
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|GoodMage_Attack
+      takeName: Armature|GoodMage_Attack
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/DEF_Foot.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L/DEF_Toe.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L/IK_Knee.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R/DEF_Toe.R_end
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R/IK_Knee.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L/DEF_Index03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L/DEF_Middle03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L/DEF_Pinky03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L/DEF_Thumb02.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon/DEF_Weapon_end
+        weight: 1
+      - path: Armature/DEF_Hand.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R/DEF_Index03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R/DEF_Middle03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R/DEF_Pinky03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R/DEF_Thumb02.R_end
+        weight: 1
+      - path: Armature/DEF_Hip
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L/DEF_ArmLower.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R/DEF_ArmLower.R_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head/DEF_Head_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L/DEF_Leg.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R/DEF_Leg.R_end
+        weight: 1
+      - path: Armature/IK_Elbow.L
+        weight: 1
+      - path: Armature/IK_Elbow.L/IK_Elbow.L_end
+        weight: 1
+      - path: Armature/IK_Elbow.R
+        weight: 1
+      - path: Armature/IK_Elbow.R/IK_Elbow.R_end
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Root_end
+        weight: 1
+      - path: Good_Mage
+        weight: 1
+      - path: Scepter
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|GoodMage_Run
+      takeName: Armature|GoodMage_Run
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/DEF_Foot.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L/DEF_Toe.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L/IK_Knee.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R/DEF_Toe.R_end
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R/IK_Knee.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L/DEF_Index03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L/DEF_Middle03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L/DEF_Pinky03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L/DEF_Thumb02.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon/DEF_Weapon_end
+        weight: 1
+      - path: Armature/DEF_Hand.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R/DEF_Index03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R/DEF_Middle03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R/DEF_Pinky03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R/DEF_Thumb02.R_end
+        weight: 1
+      - path: Armature/DEF_Hip
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L/DEF_ArmLower.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R/DEF_ArmLower.R_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head/DEF_Head_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L/DEF_Leg.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R/DEF_Leg.R_end
+        weight: 1
+      - path: Armature/IK_Elbow.L
+        weight: 1
+      - path: Armature/IK_Elbow.L/IK_Elbow.L_end
+        weight: 1
+      - path: Armature/IK_Elbow.R
+        weight: 1
+      - path: Armature/IK_Elbow.R/IK_Elbow.R_end
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Root_end
+        weight: 1
+      - path: Good_Mage
+        weight: 1
+      - path: Scepter
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
