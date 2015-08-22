@@ -131,18 +131,22 @@ public class Weapon : MonoBehaviour, IAttacker
         if (sqrDistance > _maxSqrDistance)
             return;
 
-        // Check for line of sight.
-        RaycastHit hit;
-        if (!Physics.Raycast(transform.position, Target.position - transform.position, out hit, Range + Detection, LineOfSightMask))
-            return;
+        if (LineOfSightMask != 0)
+        {
+            // Check for line of sight.
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position, Target.position - transform.position, out hit, Range + Detection,
+                    LineOfSightMask))
+                return;
 
-        // Can we range the target down line of sight?
-        if (hit.collider == null)
-            return;
-        if (((1 << hit.collider.gameObject.layer) & Mask.value) == 0)
-            return;
-        if (hit.distance > Range)
-            return;
+            // Can we range the target down line of sight?
+            if (hit.collider == null)
+                return;
+            if (((1 << hit.collider.gameObject.layer) & Mask.value) == 0)
+                return;
+            if (hit.distance > Range)
+                return;
+        }
 
         // Spawn an attack.
         var attack = ObjectPool.Instance.GetObjectWithComponent(AttackPrefab);
