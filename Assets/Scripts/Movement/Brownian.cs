@@ -20,7 +20,7 @@ public class Brownian : MonoBehaviour {
         _strength = Strength * Interval;
 
 		if (!Body)
-			Body = GetComponent<Rigidbody>();
+			Body = GetComponentInParent<Rigidbody>();
 	}
 
 	void FixedUpdate() 
