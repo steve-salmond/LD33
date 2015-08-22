@@ -24,6 +24,9 @@ public class Weapon : MonoBehaviour, IAttacker
 	public Facing Facing;
     public Unit Unit;
 
+    public bool AutoTarget = true;
+    public bool AutoAttack = true;
+
 	public Transform Target { get; private set; }
 
 	public bool Attacking { get { return Target != null; } }
@@ -56,8 +59,11 @@ public class Weapon : MonoBehaviour, IAttacker
         if (Unit == null)
             Unit = GetComponentInParent<Unit>();
 
-		StartCoroutine(UpdateTarget());
-        StartCoroutine(AttackTarget());
+        if (AutoTarget)
+		    StartCoroutine(UpdateTarget());
+
+        if (AutoAttack)
+            StartCoroutine(AttackTarget());
 	}
 
     void OnDisable()
@@ -98,52 +104,58 @@ public class Weapon : MonoBehaviour, IAttacker
             // Wait a while.
             yield return _attackWaits[Random.Range(0, AttackRangeCount)];
 
-            // Check if target is inactive.
-			if (Target == null)
-				{ SetTarget(null); continue; }
-			if (!Target.gameObject.activeSelf)
-				{ SetTarget(null); continue; }
-            if (!IsValidTarget(Target))
-				{ SetTarget(null); continue; }
-
-            // Check if target is outside detection range.
-		    var sqrDistance = UseBoundsForRange
-		        ? _targetCollider.bounds.SqrDistance(transform.position)
-		        : Vector3.SqrMagnitude(Target.position - transform.position);
-
-            if (sqrDistance > _maxSqrDetectionDistance)
-                { SetTarget(null); continue; }
-
-            // Check if target is outside weapon range.
-            if (sqrDistance > _maxSqrDistance)
-                continue;
-
-            // Check for line of sight.
-		    RaycastHit hit;
-		    if (!Physics.Raycast(transform.position, Target.position - transform.position, out hit, Range + Detection, LineOfSightMask))
-                continue;
-
-            // Can we range the target down line of sight?
-            if (hit.collider == null)
-                continue;
-            if (((1 << hit.collider.gameObject.layer) & Mask.value) == 0)
-		        continue;
-			if (hit.distance > Range)
-				continue;
-
-            // Spawn an attack.
-			var attack = ObjectPool.Instance.GetObjectWithComponent(AttackPrefab);
-		    attack.Weapon = this;
-			attack.Target(Target);
+            // Attempt an attack.
+		    Attack();
 		}
 	}
+
+    public void Attack()
+    {
+        // Check if target is inactive.
+        if (Target == null)
+            { SetTarget(null); return; }
+        if (!Target.gameObject.activeSelf)
+            { SetTarget(null); return; }
+        if (!IsValidTarget(Target))
+            { SetTarget(null); return; }
+
+        // Check if target is outside detection range.
+        var sqrDistance = UseBoundsForRange
+            ? _targetCollider.bounds.SqrDistance(transform.position)
+            : Vector3.SqrMagnitude(Target.position - transform.position);
+
+        if (sqrDistance > _maxSqrDetectionDistance)
+            { SetTarget(null); return; }
+
+        // Check if target is outside weapon range.
+        if (sqrDistance > _maxSqrDistance)
+            return;
+
+        // Check for line of sight.
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, Target.position - transform.position, out hit, Range + Detection, LineOfSightMask))
+            return;
+
+        // Can we range the target down line of sight?
+        if (hit.collider == null)
+            return;
+        if (((1 << hit.collider.gameObject.layer) & Mask.value) == 0)
+            return;
+        if (hit.distance > Range)
+            return;
+
+        // Spawn an attack.
+        var attack = ObjectPool.Instance.GetObjectWithComponent(AttackPrefab);
+        attack.Weapon = this;
+        attack.Target(Target);
+    }
 
     protected virtual bool IsValidTarget(Transform target)
     {
         return target.gameObject.activeSelf;
     }
 
-    private void SetTarget(Transform value)
+    public void SetTarget(Transform value)
 	{
 	    if (Target == null && value != null)
             SpawnVocalEffect();

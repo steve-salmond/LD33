@@ -23,6 +23,9 @@ public class PlayerController : Singleton<PlayerController>
 
     public GameObject Sword;
 
+    public Weapon GoodWeapon;
+    public Weapon EvilWeapon;
+
     /** Jump effect. */
     public GameObject JumpEffect;
 
@@ -41,17 +44,26 @@ public class PlayerController : Singleton<PlayerController>
     public bool Transforming 
     { get; private set; }
 
+    public Transform Mouse;
+
     private Rigidbody _rigidbody;
     private Animator _animator;
+    private Unit _unit;
 
     public bool Grounded { get; private set; }
 
     private bool _jump;
 
+    private Plane _attackPlane = new Plane(Vector3.up, 1);
+
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
+        _unit = GetComponentInChildren<Unit>();
+        _unit.EquipWeapon(GoodWeapon);
+
         Destructible = GetComponent<Destructible>();
     }
 
@@ -68,6 +80,7 @@ public class PlayerController : Singleton<PlayerController>
         UpdateAlignment();
         UpdateGrounded();
         UpdateMovement();
+        UpdateAttacks();
         UpdateJump();
     }
 
@@ -93,6 +106,10 @@ public class PlayerController : Singleton<PlayerController>
 
         // Update sword visibility.
         Sword.SetActive(good);
+
+        // Equip the appropriate weapon.
+        var weapon = good ? GoodWeapon : EvilWeapon;
+        _unit.EquipWeapon(weapon);
 
         // Fire off the transformation trigger.
         _animator.SetTrigger("Transformation");
@@ -160,9 +177,40 @@ public class PlayerController : Singleton<PlayerController>
         // Update animator state.
         _animator.SetBool("IsRunning", !idle);
 
-        // TODO: Hook up attacks.
+    }
+
+    void UpdateAttacks()
+    {
+        // Place mouse transform under the mouse.
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float d;
+        _attackPlane.Raycast(ray, out d);
+        Mouse.position = ray.GetPoint(d);
+
+        // Check if player has a weapon.
+        if (!_unit.CurrentWeapon)
+            return;
+        if (_unit.CurrentWeapon.Attacking)
+            return;
+
+        // Check if player wishes to attack.
         var attacking = Input.GetButton("Fire1") && !Transforming;
-        _animator.SetBool("IsAttacking", attacking);
+        if (attacking)
+            StartCoroutine(AttackRoutine());
+    }
+
+    IEnumerator AttackRoutine()
+    {
+        var weapon = _unit.CurrentWeapon;
+        weapon.SetTarget(Mouse);
+        weapon.Attack();
+        _animator.SetBool("IsAttacking", true);
+
+        while (Input.GetButton("Fire1") && !Transforming)
+            yield return new WaitForSeconds(0.5f);
+
+        _animator.SetBool("IsAttacking", false);
+        weapon.SetTarget(null);
     }
 
     void UpdateJump()

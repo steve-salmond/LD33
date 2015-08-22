@@ -64,16 +64,5 @@ public class ObjectPool : Singleton<ObjectPool>
 	{
 		pool.ReturnObject(o, unparent);
 	}
-	
-	/** Log a report of pooled objects. */
-	public void Report()
-	{
-		pool.Report();
-	}
 
-	/** Generate a preinstantiator object. */
-	public void GeneratePreinstantiator()
-	{
-		pool.GeneratePreinstantiator();
-	}
 }

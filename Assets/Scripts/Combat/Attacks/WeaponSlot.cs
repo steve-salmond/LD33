@@ -18,13 +18,13 @@ public class WeaponSlot : MonoBehaviour
     {
         _unit = GetComponentInParent<Unit>();
 
-        if (!_currentWeapon)
+        if (!_currentWeapon && DefaultWeapon)
             SetWeaponPrefab(DefaultWeapon);
     }
 
     public Weapon SetWeaponPrefab(Weapon prefab)
     {
-        var weapon = ObjectPool.Instance.GetObjectWithComponent<Weapon>(prefab);
+        var weapon = prefab ? ObjectPool.Instance.GetObjectWithComponent(prefab) : null;
         return SetWeapon(weapon);
     }
 

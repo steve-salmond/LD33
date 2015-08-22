@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,10 +13,6 @@ public class LocalObjectPool
 	/** Lists of objects mapped to object types. */
 	private Dictionary<string, Stack<GameObject>> objectLists;
 	
-	/** Optionally count object instances
-	  * to generate preinstantiation data. */
-	private Dictionary<GameObject, int> instanceCounts;
-
 	/** A parent transform used as a container for instantiated objects. */
 	private Transform transform;
 
@@ -32,8 +28,7 @@ public class LocalObjectPool
 	{
 		// Create the object list and instance count maps.
 		objectLists = new Dictionary<string, Stack<GameObject>>();
-		instanceCounts = new Dictionary<GameObject, int>();
-
+		
 		this.transform = transform;
 		this.tidyUnparent = tidyUnparent;
 	}
@@ -85,17 +80,6 @@ public class LocalObjectPool
 			// Create a new object instance.
 			GameObject o = CreateObject(template, active, staticBatch, name);
 			
-			// Track instance counts.
-			#if UNITY_EDITOR
-			if (!template.CompareTag("NoPreinstantiate"))
-		    {
-				if (instanceCounts.ContainsKey(template))
-					instanceCounts[template]++;			
-				else
-					instanceCounts.Add(template, 1);
-			}
-			#endif
-			
 			return o;
 		}
 		
@@ -142,47 +126,6 @@ public class LocalObjectPool
 		// Add the object back in to the list.
 		objects.Push(o);
 	}
-	
-	/** Log a report of pooled objects. */
-	public void Report()
-	{
-		// The string that will hold the report data.
-		string report = "";
-		
-		// Track total instances.
-		int total = 0;
-		
-		// Append instances.
-		foreach (KeyValuePair<GameObject, int> pair in instanceCounts)
-		{
-			string name = pair.Key.name;
-			int count = pair.Value;
-			
-			total += count;
-			
-			report += name + "\t\t\t\t\t\t\t\t" + count + "\n";
-		}
-		
-		// Add the total.
-		report += "\nTotal = " + total;
-		
-		// Log the report.
-		Debug.Log(report);
-	}
-	
-	/** Generate a preinstantiator object. */
-	public void GeneratePreinstantiator()
-	{
-		// Create the preinstantiator object in the scene.
-		GameObject o = new GameObject("Preinstantiator");
-		
-		// Add the preinstantiator component.
-		Preinstantiator preinstantiator = (Preinstantiator)o.AddComponent(typeof(Preinstantiator));
-		
-		// Add instance counts.
-		preinstantiator.AddInstanceCounts(instanceCounts);
-	}
-	
 	
 	// Private Methods
 	// ----------------------------------------------------------------------------
