@@ -24,11 +24,14 @@ public class PlayerController : Singleton<PlayerController>
     /** Footstep effect. */
     public GameObject FootstepEffect;
 
-    public Damageable Damageable
+    public Destructible Destructible
+    { get; private set; }
+
+    public Alignment Alignment
     { get; private set; }
 
     public float Health
-    { get { return Damageable.Health; } }
+    { get { return Destructible.Health; } }
 
     private Rigidbody _rigidbody;
     private Animator _animator;
@@ -41,7 +44,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-        Damageable = GetComponent<Damageable>();
+        Destructible = GetComponent<Destructible>();
     }
 
     void Update()
@@ -54,9 +57,24 @@ public class PlayerController : Singleton<PlayerController>
 
     void FixedUpdate()
     {
+        UpdateAlignment();
         UpdateGrounded();
         UpdateMovement();
         UpdateJump();
+    }
+
+    void UpdateAlignment()
+    {
+        var old = Alignment;
+
+        Alignment = TimeController.Daytime ? Alignment.Good : Alignment.Evil;
+
+        if (old == Alignment) 
+            return;
+
+        var game = GameController.Instance;
+        var layerName = game.LayerForAlignment(Alignment);
+        gameObject.layer = LayerMask.NameToLayer(layerName);
     }
 
     void UpdateGrounded()
@@ -84,19 +102,17 @@ public class PlayerController : Singleton<PlayerController>
 
         // Update player's movement force from inputs.
         var velocity = _rigidbody.velocity;
-        var speed = velocity.magnitude;
-
         var f = Vector3.zero;
         if (Mathf.Sign(dx) != Mathf.Sign(velocity.x))
             f.x += dx;
         else
             f.x += dx * (1 - Mathf.Clamp01(Mathf.Abs(velocity.x) / MaxSpeed));
-
         if (Mathf.Sign(dz) != Mathf.Sign(velocity.z))
             f.z += dz;
         else
             f.z += dz * (1 - Mathf.Clamp01(Mathf.Abs(velocity.z) / MaxSpeed));
 
+        // Oppose movement if inputs are idle.
         f.x += -velocity.x * OpposingForceScale.x;
         f.z += -velocity.z * OpposingForceScale.y;
 

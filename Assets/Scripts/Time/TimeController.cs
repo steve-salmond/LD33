@@ -13,6 +13,15 @@ public class TimeController : Singleton<TimeController>
     public static float Now
     { get { return Instance.GetCycleFraction(Time.time); }}
 
+    /** Whether it's currently daytime. */
+    public static bool Daytime
+    { get { return Now <= 0.5f; } }
+
+    /** Whether it's currently night time. */
+    public static bool Nighttime
+    { get { return Now > 0.5f; } }
+
+
     /** Returns day/night fraction from an input time. */
     private float GetCycleFraction(float t)
     { return Mathf.Repeat(t + (CycleOffset * CycleDuration), CycleDuration) / CycleDuration; }
