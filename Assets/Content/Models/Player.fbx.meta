@@ -157,6 +157,8 @@ ModelImporter:
     7400010: Armature|Good_Idle
     7400012: Armature|Good_Run
     7400014: Player_Geo|Evil_Run.001
+    7400016: Armature|Evil_Transform
+    7400018: Armature|Good_Transform
     9500000: //RootNode
     13700000: Player_Geo
     13700002: Sword_Geo
@@ -1193,6 +1195,342 @@ ModelImporter:
       - path: Player_Geo
         weight: 1
       - path: Sword_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Evil_Transform
+      takeName: Armature|Evil_Transform
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/DEF_Foot.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L/DEF_Toe.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L/IK_Knee.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R/DEF_Toe.R_end
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R/IK_Knee.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L/DEF_Index03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L/DEF_Middle03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L/DEF_Pinky03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L/DEF_Thumb02.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon/DEF_Weapon_end
+        weight: 1
+      - path: Armature/DEF_Hand.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R/DEF_Index03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R/DEF_Middle03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R/DEF_Pinky03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R/DEF_Thumb02.R_end
+        weight: 1
+      - path: Armature/DEF_Hip
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L/DEF_ArmLower.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R/DEF_ArmLower.R_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head/DEF_Head_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L/DEF_Leg.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R/DEF_Leg.R_end
+        weight: 1
+      - path: Armature/IK_Elbow.L
+        weight: 1
+      - path: Armature/IK_Elbow.L/IK_Elbow.L_end
+        weight: 1
+      - path: Armature/IK_Elbow.R
+        weight: 1
+      - path: Armature/IK_Elbow.R/IK_Elbow.R_end
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Root_end
+        weight: 1
+      - path: Player_Geo
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Good_Transform
+      takeName: Armature|Good_Transform
+      firstFrame: 0
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/DEF_Foot.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/DEF_Toe.L/DEF_Toe.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L
+        weight: 1
+      - path: Armature/DEF_Foot.L/IK_Knee.L/IK_Knee.L_end
+        weight: 1
+      - path: Armature/DEF_Foot.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/DEF_Toe.R/DEF_Toe.R_end
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R
+        weight: 1
+      - path: Armature/DEF_Foot.R/IK_Knee.R/IK_Knee.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Index01.L/DEF_Index02.L/DEF_Index03.L/DEF_Index03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Middle01.L/DEF_Middle02.L/DEF_Middle03.L/DEF_Middle03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Pinky01.L/DEF_Pinky02.L/DEF_Pinky03.L/DEF_Pinky03.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Thumb01.L/DEF_Thumb02.L/DEF_Thumb02.L_end
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon
+        weight: 1
+      - path: Armature/DEF_Hand.L/DEF_Weapon/DEF_Weapon_end
+        weight: 1
+      - path: Armature/DEF_Hand.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Index01.R/DEF_Index02.R/DEF_Index03.R/DEF_Index03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Middle01.R/DEF_Middle02.R/DEF_Middle03.R/DEF_Middle03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Pinky01.R/DEF_Pinky02.R/DEF_Pinky03.R/DEF_Pinky03.R_end
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R
+        weight: 1
+      - path: Armature/DEF_Hand.R/DEF_Thumb01.R/DEF_Thumb02.R/DEF_Thumb02.R_end
+        weight: 1
+      - path: Armature/DEF_Hip
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.L/DEF_ArmLower.L/DEF_ArmLower.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_ArmUpper.R/DEF_ArmLower.R/DEF_ArmLower.R_end
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head
+        weight: 1
+      - path: Armature/DEF_Hip/Def_Spine/DEf_Chest/DEF_Neck/DEF_Head/DEF_Head_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.L/DEF_Leg.L/DEF_Leg.L_end
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R
+        weight: 1
+      - path: Armature/DEF_Hip/DEF_Tigh.R/DEF_Leg.R/DEF_Leg.R_end
+        weight: 1
+      - path: Armature/IK_Elbow.L
+        weight: 1
+      - path: Armature/IK_Elbow.L/IK_Elbow.L_end
+        weight: 1
+      - path: Armature/IK_Elbow.R
+        weight: 1
+      - path: Armature/IK_Elbow.R/IK_Elbow.R_end
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Root_end
+        weight: 1
+      - path: Player_Geo
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
