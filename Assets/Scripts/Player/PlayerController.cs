@@ -21,6 +21,8 @@ public class PlayerController : Singleton<PlayerController>
 
     public float AlignmentChangeDuration = 1;
 
+    public GameObject Sword;
+
     /** Jump effect. */
     public GameObject JumpEffect;
 
@@ -35,6 +37,9 @@ public class PlayerController : Singleton<PlayerController>
 
     public float Health
     { get { return Destructible.Health; } }
+
+    public bool Transforming 
+    { get; private set; }
 
     private Rigidbody _rigidbody;
     private Animator _animator;
@@ -73,19 +78,28 @@ public class PlayerController : Singleton<PlayerController>
 
         // Perform alignment transition.
         if (old != Alignment)
-            StartCoroutine(ChangeAlignmentRoutine());
+            StartCoroutine(TransformationRoutine());
     }
 
-    private IEnumerator ChangeAlignmentRoutine()
+    private IEnumerator TransformationRoutine()
     {
+        Transforming = true;
+
         // Update player's layer.
         var game = GameController.Instance;
         var layerName = game.LayerForAlignment(Alignment);
+        var good = Alignment == Alignment.Good;
         gameObject.layer = LayerMask.NameToLayer(layerName);
 
+        // Update sword visibility.
+        Sword.SetActive(good);
+
+        // Fire off the transformation trigger.
+        _animator.SetTrigger("Transformation");
+
         // Cross-fade animation layers from good to evil (or vice versa).
-        var fromLayer = Alignment == Alignment.Good ? 1 : 2;
-        var toLayer = Alignment == Alignment.Good ? 2 : 1;
+        var fromLayer = good ? 1 : 2;
+        var toLayer = good ? 2 : 1;
         var duration = AlignmentChangeDuration;
         var start = Time.time;
         var end = start + duration;
@@ -96,6 +110,8 @@ public class PlayerController : Singleton<PlayerController>
             _animator.SetLayerWeight(toLayer, 1 - f);
             yield return 0;
         }
+
+        Transforming = false;
     }
 
     void UpdateGrounded()
@@ -114,8 +130,9 @@ public class PlayerController : Singleton<PlayerController>
         var scale = Grounded ? InputForceScale : AirborneForceScale;
 
         // Get player's inputs.
-        var dx = Input.GetAxisRaw("Horizontal") * scale.x;
-        var dz = Input.GetAxisRaw("Vertical") * scale.y;
+        var transforming = (Transforming ? 0 : 1);
+        var dx = Input.GetAxisRaw("Horizontal") * scale.x * transforming;
+        var dz = Input.GetAxisRaw("Vertical") * scale.y * transforming;
         var idle = Mathf.Approximately(dx, 0) && Mathf.Approximately(dz, 0) && Grounded;
 
         // Ajust player's drag depending on whether they wish to move or not.
@@ -144,7 +161,7 @@ public class PlayerController : Singleton<PlayerController>
         _animator.SetBool("IsRunning", !idle);
 
         // TODO: Hook up attacks.
-        var attacking = Input.GetButton("Fire1");
+        var attacking = Input.GetButton("Fire1") && !Transforming;
         _animator.SetBool("IsAttacking", attacking);
     }
 
@@ -156,6 +173,10 @@ public class PlayerController : Singleton<PlayerController>
 
         // Check if player wishes to jump and is grounded.
         if (!_jump || !Grounded)
+            return;
+
+        // Check if transforming.
+        if (Transforming)
             return;
 
         // Apply jump force.
