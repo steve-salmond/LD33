@@ -11,7 +11,7 @@ public class TimeController : Singleton<TimeController>
 
     /** Return the current day/night cycle fraction (0 = sunrise, 0.25 = noon, 0.5 = sunset, 0.75 = midnight, 1 = sunrise). */
     public static float Now
-    { get { return Instance.GetCycleFraction(Time.time); }}
+    { get { return Instance.GetCycleFraction(Time.timeSinceLevelLoad); }}
 
     /** Whether it's currently daytime. */
     public static bool Daytime

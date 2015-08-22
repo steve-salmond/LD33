@@ -41,6 +41,9 @@ public class PlayerController : Singleton<PlayerController>
     public float Health
     { get { return Destructible.Health; } }
 
+    public bool IsDead
+    { get { return Destructible.IsDestroyed; } }
+
     public bool Transforming 
     { get; private set; }
 
@@ -99,7 +102,7 @@ public class PlayerController : Singleton<PlayerController>
         Transforming = true;
 
         // Update player's layer.
-        var game = GameController.Instance;
+        var game = GameManager.Instance;
         var layerName = game.LayerForAlignment(Alignment);
         var good = Alignment == Alignment.Good;
         gameObject.layer = LayerMask.NameToLayer(layerName);

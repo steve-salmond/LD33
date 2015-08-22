@@ -7,7 +7,7 @@ public class Destructible : MonoBehaviour
 	// ----------------------------------------------------------------------------
 
 	/** Amount of damage the object can sustain before being destroyed. */
-	public float Health = 100;
+	public float InitialHealth = 100;
 
 	/** Damage effect. */
 	public GameObject DamageEffect;
@@ -24,27 +24,29 @@ public class Destructible : MonoBehaviour
     /** Destructible's associated unit. */
     public Unit Unit { get; private set; }
 
+    /** Destructible's current health. */
+    public float Health { get; private set; }
+
     /** Whether object is at full health. */
     public bool IsFullHealth
-        { get { return _health >= Health; } }
+        { get { return Health >= InitialHealth; } }
 
     /** Whether object is damaged. */
     public bool IsDamaged
-        { get { return _health < Health; } }
+        { get { return Health < InitialHealth; } }
 
     /** Whether object is destroyed. */
     public bool IsDestroyed
-        { get { return _health <= 0; } }
+        { get { return Health <= 0; } }
 
 
     // Members
     // ----------------------------------------------------------------------------
 
     /** Current health. */
-	private float _health;
 
-	
-	// Unity Implementation
+
+    // Unity Implementation
 	// ----------------------------------------------------------------------------
 
     void Awake()
@@ -54,41 +56,41 @@ public class Destructible : MonoBehaviour
 	public void OnEnable()
 	{
 		// Reset health to initial value.
-		_health = Health;
+		Health = InitialHealth;
 
         // Update damage state.
         foreach (var s in DamageStates)
-            s.UpdateState(_health);
+            s.UpdateState(Health);
 	}
 
 	/** Apply damage to this entity. */
 	public bool Damage(float damage, Vector3 point, Attack attack)
 	{
 		// Check if any damage was done.
-        if (_health <= 0 || Mathf.Approximately(damage, 0))
+        if (Health <= 0 || Mathf.Approximately(damage, 0))
 			return false;
-	    if (_health >= Health && damage < 0)
+	    if (Health >= InitialHealth && damage < 0)
 	        return false;
 		
 		// Apply damage to the object's health.
-		_health -= damage;
+		Health -= damage;
 		
 		// Clamp health to allowed range.
-		_health = Mathf.Clamp(_health, 0, Health);
+		Health = Mathf.Clamp(Health, 0, InitialHealth);
 
         // Update damage state.
         foreach (var s in DamageStates)
-            s.UpdateState(_health);
+            s.UpdateState(Health);
 
 		// Kick off damage effect, if any.
-        if (_health > 0 && damage > 0 && DamageEffect != null && Random.value <= DamageEffectProbability)
+        if (Health > 0 && damage > 0 && DamageEffect != null && Random.value <= DamageEffectProbability)
 		{
 			var go = ObjectPool.Instance.GetObject(DamageEffect);
 			go.transform.position = point != Vector3.zero ? point : transform.position;
 		}
 		
 		// Check if the object should die.
-		if (_health <= 0)
+		if (Health <= 0)
             Die(attack);
 
         // Damage occurred.
