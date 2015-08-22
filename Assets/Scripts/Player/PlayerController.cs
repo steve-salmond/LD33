@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -17,6 +18,8 @@ public class PlayerController : Singleton<PlayerController>
     public float MovingDrag = 0;
 
     public float AimOffsetScale = 5;
+
+    public float AlignmentChangeDuration = 1;
 
     /** Jump effect. */
     public GameObject JumpEffect;
@@ -43,7 +46,7 @@ public class PlayerController : Singleton<PlayerController>
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
         Destructible = GetComponent<Destructible>();
     }
 
@@ -66,15 +69,33 @@ public class PlayerController : Singleton<PlayerController>
     void UpdateAlignment()
     {
         var old = Alignment;
-
         Alignment = TimeController.Daytime ? Alignment.Good : Alignment.Evil;
 
-        if (old == Alignment) 
-            return;
+        // Perform alignment transition.
+        if (old != Alignment)
+            StartCoroutine(ChangeAlignmentRoutine());
+    }
 
+    private IEnumerator ChangeAlignmentRoutine()
+    {
+        // Update player's layer.
         var game = GameController.Instance;
         var layerName = game.LayerForAlignment(Alignment);
         gameObject.layer = LayerMask.NameToLayer(layerName);
+
+        // Cross-fade animation layers from good to evil (or vice versa).
+        var fromLayer = Alignment == Alignment.Good ? 1 : 2;
+        var toLayer = Alignment == Alignment.Good ? 2 : 1;
+        var duration = AlignmentChangeDuration;
+        var start = Time.time;
+        var end = start + duration;
+        while (Time.time < end)
+        {
+            var f = Mathf.Clamp01((Time.time - start) / duration);
+            _animator.SetLayerWeight(fromLayer, f);
+            _animator.SetLayerWeight(toLayer, 1 - f);
+            yield return 0;
+        }
     }
 
     void UpdateGrounded()
@@ -120,7 +141,11 @@ public class PlayerController : Singleton<PlayerController>
         Debug.DrawRay(transform.position, f, Color.green);
 
         // Update animator state.
-        // _animator.SetFloat("RunSpeed", Input.GetAxis("Horizontal"));
+        _animator.SetBool("IsRunning", !idle);
+
+        // TODO: Hook up attacks.
+        var attacking = Input.GetButton("Fire1");
+        _animator.SetBool("IsAttacking", attacking);
     }
 
     void UpdateJump()
