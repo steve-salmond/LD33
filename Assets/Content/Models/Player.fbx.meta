@@ -75,6 +75,7 @@ ModelImporter:
     100138: Root
     100140: Root_end
     100142: Sword_Geo
+    100144: Player_Working
     400000: Armature
     400002: DEF_ArmLower.L
     400004: DEF_ArmLower.L_end
@@ -147,8 +148,10 @@ ModelImporter:
     400138: Root
     400140: Root_end
     400142: Sword_Geo
+    400144: Player_Working
     4300000: Player_Geo
     4300002: Sword_Geo
+    4300004: Player_Working
     7400000: Armature|Evil_Attack01
     7400002: Armature|Evil_Idle
     7400004: Armature|Evil_Run
@@ -162,6 +165,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: Player_Geo
     13700002: Sword_Geo
+    13700004: Player_Working
   materials:
     importMaterials: 1
     materialName: 1
