@@ -21,15 +21,12 @@ public class ProjectileAttack : Attack
 
 		transform.position = Weapon.Emitter.position;
 
-        if (_rigidbody == null)
-			return;
-
-		var speed = Random.Range(SpeedRange.x, SpeedRange.y);
-		var direction = (target.position - transform.position).normalized;
-
+        var speed = Random.Range(SpeedRange.x, SpeedRange.y);
+        var direction = (target.position - transform.position).normalized;
 		transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
-        _rigidbody.velocity = (direction * speed);
+        if (_rigidbody)
+            _rigidbody.velocity = (direction * speed);
 	}
 
 	private void SpawnMuzzleFlare(Weapon weapon)
