@@ -185,8 +185,8 @@ public class Weapon : MonoBehaviour, IAttacker
 		if (!VocalEffect)
 			return;
 		
-		if (Time.time < _nextVocalEffect)
-			return;
+		// if (Time.time < _nextVocalEffect)
+		//	return;
 		
 		var go = ObjectPool.Instance.GetObject(VocalEffect);
 		go.transform.position = transform.position;
