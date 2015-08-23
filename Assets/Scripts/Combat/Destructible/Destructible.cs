@@ -27,6 +27,9 @@ public class Destructible : MonoBehaviour
     /** Destructible's current health. */
     public float Health { get; private set; }
 
+    /** Destructible's current health fraction. */
+    public float HealthFraction { get { return Health / InitialHealth; } }
+
     /** Whether object is at full health. */
     public bool IsFullHealth
         { get { return Health >= InitialHealth; } }
@@ -41,6 +44,9 @@ public class Destructible : MonoBehaviour
 
     /** Whether object is invulnerable. */
     public bool Invulnerable;
+
+    /** Time of last damage event. */
+    public float LastDamageTime;
 
 
     // Members
@@ -115,7 +121,10 @@ public class Destructible : MonoBehaviour
 			var go = ObjectPool.Instance.GetObject(DamageEffect);
 			go.transform.position = point != Vector3.zero ? point : transform.position;
 		}
-		
+
+        // Record damage time.
+	    LastDamageTime = Time.time;
+
 		// Check if the object should die.
 		if (Health <= 0)
             Die(attack);

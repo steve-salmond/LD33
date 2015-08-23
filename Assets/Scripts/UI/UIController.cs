@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     public Text GoodScore;
     public Text EvilScore;
     public Text Health;
+    public Graphic HealthFade;
 
     public Graphic GoodVictory;
     public Graphic EvilVictory;
@@ -20,6 +21,9 @@ public class UIController : MonoBehaviour
     public float FadeOutTime = 5;
 
     private bool _gameOver;
+
+    private float _healthAlpha = 0;
+    private float _healthAlphaVelocity = 0;
 
 	void Start ()
 	{
@@ -35,6 +39,17 @@ public class UIController : MonoBehaviour
 
 	    if (GameManager.Instance.State != GameManager.GameState.Playing)
 	        GameOver();
+	    else
+	    {
+	        var healthFraction = PlayerController.Instance.Destructible.HealthFraction;
+	        var damageTime = PlayerController.Instance.Destructible.LastDamageTime;
+	        var healthAlphaTarget = (1 - healthFraction) * 0.5f;
+            if ((Time.time - damageTime) < 0.2f)
+	            healthAlphaTarget = 0.5f;
+
+            _healthAlpha = Mathf.SmoothDamp(_healthAlpha, healthAlphaTarget, ref _healthAlphaVelocity, 0.1f);
+            HealthFade.color = new Color(0.5f, 0, 0, _healthAlpha);
+	    }
 	}
 
     void GameOver()

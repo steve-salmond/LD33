@@ -25,5 +25,8 @@ public class Spawner : MonoBehaviour
 	}
 
     void Spawn()
-    { Instantiate(Prefab, transform.position, Quaternion.identity); }
+    {
+        var go = Instantiate(Prefab, transform.position, Quaternion.identity) as GameObject;
+        go.transform.parent = ObjectPool.Instance.transform;
+    }
 }

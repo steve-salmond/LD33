@@ -27,6 +27,8 @@ public class Weapon : MonoBehaviour, IAttacker
     public bool AutoTarget = true;
     public bool AutoAttack = true;
 
+    public bool ReparentAttack;
+
 	public Transform Target { get; private set; }
 
 	public bool Attacking { get; private set; }
@@ -157,6 +159,10 @@ public class Weapon : MonoBehaviour, IAttacker
         attack.Weapon = this;
         attack.Target(Target);
         Attacking = true;
+
+        // Reparent attack to the weapon if desired.
+        if (ReparentAttack)
+            attack.transform.parent = transform;
     }
 
     protected virtual bool IsValidTarget(Transform target)
