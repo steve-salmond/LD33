@@ -29,8 +29,8 @@ public class UIController : MonoBehaviour
 	
 	void Update ()
 	{
-	    GoodScore.text = string.Format("{0}", GameManager.Instance.GoodScore);
-        EvilScore.text = string.Format("{0}", GameManager.Instance.EvilScore);
+	    GoodScore.text = string.Format("{0}", UnitManager.Instance.GoodFraction * 100);
+        EvilScore.text = string.Format("{0}", UnitManager.Instance.EvilFraction * 100);
         Health.text = string.Format("{0}", PlayerController.Instance.Health);
 
 	    if (GameManager.Instance.State != GameManager.GameState.Playing)

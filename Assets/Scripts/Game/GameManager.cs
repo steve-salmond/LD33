@@ -30,13 +30,15 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
+        if (Time.timeSinceLevelLoad < 20)
+            return;
+
         if (PlayerController.Instance.IsDead)
             Defeat();
         else if (UnitManager.Instance.Evil == 0)
             GoodVictory();
         else if (UnitManager.Instance.Good == 0)
             EvilVictory();
-
     }
 
     void Defeat()
