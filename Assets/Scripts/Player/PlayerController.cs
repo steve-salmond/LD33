@@ -29,9 +29,6 @@ public class PlayerController : Singleton<PlayerController>
     /** Jump effect. */
     public GameObject JumpEffect;
 
-    /** Footstep effect. */
-    public GameObject FootstepEffect;
-
     public Destructible Destructible
     { get; private set; }
 
@@ -249,16 +246,5 @@ public class PlayerController : Singleton<PlayerController>
         // Don't jump until next frame.
         _jump = false;
     }
-
-    void Footstep()
-    {
-        if (!Grounded)
-            return;
-
-        if (FootstepEffect)
-        {
-            var effect = Instantiate(FootstepEffect, transform.position, transform.rotation) as GameObject;
-            effect.transform.parent = transform.transform;
-        }
-    }
+    
 }
