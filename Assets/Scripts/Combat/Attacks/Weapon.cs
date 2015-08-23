@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour, IAttacker
 	public Transform Emitter;
 
 	public GameObject VocalEffect;
-	private static float _nextVocalEffect = 0;
+	// private static float _nextVocalEffect = 0;
 
 	public Facing Facing;
     public Unit Unit;
@@ -193,7 +193,7 @@ public class Weapon : MonoBehaviour, IAttacker
 		go.transform.rotation = transform.rotation;
 		go.transform.parent = transform;
 		
-		_nextVocalEffect = Time.time + 5;
+		// _nextVocalEffect = Time.time + 5;
 	}
 
 }

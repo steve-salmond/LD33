@@ -97,6 +97,7 @@ public class PlayerController : Singleton<PlayerController>
     private IEnumerator TransformationRoutine()
     {
         Transforming = true;
+        Destructible.Invulnerable = true;
 
         // Update player's layer.
         var game = GameManager.Instance;
@@ -129,6 +130,9 @@ public class PlayerController : Singleton<PlayerController>
         }
 
         Transforming = false;
+
+        yield return new WaitForSeconds(1);
+        Destructible.Invulnerable = false;
     }
 
     void UpdateGrounded()

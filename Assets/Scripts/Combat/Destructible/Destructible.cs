@@ -39,6 +39,9 @@ public class Destructible : MonoBehaviour
     public bool IsDestroyed
         { get { return Health <= 0; } }
 
+    /** Whether object is invulnerable. */
+    public bool Invulnerable;
+
 
     // Members
     // ----------------------------------------------------------------------------
@@ -63,6 +66,28 @@ public class Destructible : MonoBehaviour
             s.UpdateState(Health);
 	}
 
+    /** Heal this entity. */
+    public bool Heal(float amount)
+    {
+        // Check if any healing was done.
+        if (Health <= 0 || Mathf.Approximately(amount, 0))
+            return false;
+        if (Health >= InitialHealth)
+            return false;
+        
+        // Apply healing to the object's health.
+        Health += amount;
+
+        // Clamp health to allowed range.
+        Health = Mathf.Clamp(Health, 0, InitialHealth);
+
+        // Update damage state.
+        foreach (var s in DamageStates)
+            s.UpdateState(Health);
+
+        return true;
+    }
+
 	/** Apply damage to this entity. */
 	public bool Damage(float damage, Vector3 point, Attack attack)
 	{
@@ -71,6 +96,8 @@ public class Destructible : MonoBehaviour
 			return false;
 	    if (Health >= InitialHealth && damage < 0)
 	        return false;
+        if (Invulnerable)
+            return false;
 		
 		// Apply damage to the object's health.
 		Health -= damage;

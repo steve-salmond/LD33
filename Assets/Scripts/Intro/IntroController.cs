@@ -6,9 +6,7 @@ using DG.Tweening;
 public class IntroController : MonoBehaviour
 {
 
-    public GameObject MusicPrefab;
-
-    private static GameObject _music;
+    
 
     public Graphic One;
     public Graphic Two;
@@ -23,10 +21,6 @@ public class IntroController : MonoBehaviour
 
         // Start intro routine.
 	    StartCoroutine(IntroRoutine());
-
-        // Start music.
-	    if (_music == null)
-	        _music = Instantiate(MusicPrefab) as GameObject;
     }
 	
 	IEnumerator IntroRoutine()
