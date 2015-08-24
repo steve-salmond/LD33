@@ -31,8 +31,12 @@ public class DetonateBehavior : MonoBehaviour
 	/** Maximum damage amount. */
 	public float MaxDamage = 10;
 
+    /** Whether to return object to pool immediately. */
+    public bool ReturnToPool = true;
 
     public Attack Attack { get; private set; }
+
+    private bool _detonated;
 
 	void Start()
 	{
@@ -41,10 +45,18 @@ public class DetonateBehavior : MonoBehaviour
 		if (DetonateLocation == null)
 			DetonateLocation = transform;
 	}
+
+    protected virtual void OnEnable()
+    { _detonated = false; }
 	
 	/** Detonate the object. */
 	public void Detonate(Vector3 position, Quaternion rotation, Vector3 direction)
 	{
+        if (_detonated)
+            return;
+
+	    _detonated = true;
+
 		// Apply blast radius effect.
 		ApplyBlast(transform.position, DetonateRadius);
 		
@@ -53,10 +65,12 @@ public class DetonateBehavior : MonoBehaviour
 		{
 			var go = ObjectPool.Instance.GetObject(DetonateEffect);
 			go.transform.position = DetonateLocation.position;
+            go.transform.rotation = DetonateLocation.rotation;
 		}
 
 		// Destroy this object.
-		ObjectPool.Instance.ReturnObject(gameObject);
+        if (ReturnToPool)
+		    ObjectPool.Instance.ReturnObject(gameObject);
 	}
 
 	/** Damage everything in the blast radius. */

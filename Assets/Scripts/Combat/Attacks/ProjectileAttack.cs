@@ -7,6 +7,8 @@ public class ProjectileAttack : Attack
 
 	public Vector2 SpeedRange;
 
+    public bool MatchEmitterRotation;
+
     private Rigidbody _rigidbody;
 
     void Awake()
@@ -23,7 +25,11 @@ public class ProjectileAttack : Attack
 
         var speed = Random.Range(SpeedRange.x, SpeedRange.y);
         var direction = (target.position - transform.position).normalized;
-		transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
+	    if (MatchEmitterRotation)
+	        transform.rotation = Weapon.Emitter.rotation;
+        else
+		    transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
         if (_rigidbody)
             _rigidbody.velocity = (direction * speed);

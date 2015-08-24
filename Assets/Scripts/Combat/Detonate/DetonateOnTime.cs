@@ -12,8 +12,11 @@ public class DetonateOnTime : DetonateBehavior
 	
 
 	// Use this for initialization
-	void OnEnable() 
-		{ Invoke("SelfDestruct", Lifetime); }
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        Invoke("SelfDestruct", Lifetime);
+    }
 	
 	void OnDisable()
 		{ CancelInvoke(); }
